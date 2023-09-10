@@ -1,0 +1,10 @@
+https://es.react.dev/
+node.js
+npm js //conseguir mas paquetes o librerias
+
+
+npm create vite@latest
+
+cd my-project
+npm install
+npm run dev
