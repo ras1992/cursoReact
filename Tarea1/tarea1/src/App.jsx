@@ -1,51 +1,19 @@
 import { Box, Flex, Text, Input, Button, Divider, Stack, FormControl, FormErrorMessage} from '@chakra-ui/react';
-import { FaGoogle, FaBars } from 'react-icons/fa'; // Replace 'fa' with the correct FontAwesome library
+import { FaGoogle, FaBars, FaUser, FaLock } from 'react-icons/fa'; // Replace 'fa' with the correct FontAwesome library
 
-// import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { ChakraProvider} from '@chakra-ui/react';
 import './App.css';
 import patas from './Components/Images/patas3.png';
 import iconFace from './Components/Images/iconFace.png';
 import iconZapa from './Components/Images/icono2.png';
+import iconUser from './Components/Images/user.png';
+import iconLock from './Components/Images/lock.png';
+
+import style from './Components/style/styleConstant.js'
 
 function App() {
-  const letraRara = {
-    fontFamily: 'Lobster Two, cursive',
-  };
-
-  const boxStart = {
-    w: '30em',
-    h: '65vh',
-    bg: "#dedede",
-    flexGrow: 1,
-  };
-
-  const boxEnd = {
-    w: '45em',
-    h: '65vh',
-    bg: "#f4f4f4",
-    flexGrow: 1.5,
-  };
-
-  const standard ={
-    display: 'flex',
-    alignItems: 'center', // Centra verticalmente el contenido
-    justifyContent: 'center',
-    fontFamily:'roboto',
-  }
-
-  const showesTitle={
-    marginLeft:'1em',
-    fontSize:'35px',
-    fontWeight:'bold',
-    color:'blue.500',
-  }
-
-  const showesSubtitle={
-    marginLeft:'1.5em',
-    fontSize:'22px',
-    color:'grey',
-  }
+  
 
   // function errorMessageExample() {
   //   const [input, setInput] = useState('')
@@ -68,26 +36,27 @@ function App() {
   //   )
   // }
 
-  const navbarStyles = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '1em',
-  };
 
+  const [mostrarDefecto, setMostrarDefecto] = useState(true);
+  const [ocultarDefecto, setOcultarDefecto] = useState(false);
+
+  const toggleElementVisibility = () => {
+    setMostrarDefecto(!mostrarDefecto);
+    setOcultarDefecto(!ocultarDefecto);
+  };
   return (
-    <div sx={{ ...standard, h: '100vh',}}>
+    <div sx={{ ...style.standard, h: '100vh',}}>
       <Flex as="login" justify="space-between" wrap="wrap">
-        <Box sx={{ ...boxStart, ...standard, h: '100vh', }}>
+        <Box sx={{ ...style.boxStart, ...style.standard, h: '100vh', }}>
 
           <div>
             <Box>
-              <Text sx={{ ...showesTitle, mb: '1' }}>Welcome to El-Showes</Text>
-              <Text sx={{ ...showesSubtitle, mt: '1' }}>For a better experience with your shoes!</Text>
+              <Text sx={{ ...style.showesTitle, mb: '1' }}>Welcome to El-Showes</Text>
+              <Text sx={{ ...style.showesSubtitle, mt: '1' }}>For a better experience with your shoes!</Text>
 
             </Box>
             <Box>
-              <img src={patas} alt="Mi Imagen" style={{ marginTop: '2em',maxWidth: '100%', maxHeight: '100%' }}/>
+              <img src={patas} alt="Mi Imagen" style={style.imgPata}/>
             </Box>
           </div>
           
@@ -95,25 +64,17 @@ function App() {
         
         
 
-        <Box sx={{ ...boxEnd, h:'100vh'}}>
+        <Box sx={{ ...style.boxEnd, h:'100vh'}}>
           <Flex flexDirection="column">
-            <Flex sx={navbarStyles} > {/* Comienza el navbar */}
+            <Flex sx={style.navbarStyles} > {/* Comienza el navbar */}
               
               <Flex ml="3em" alignItems= 'center'>
-                <Box
-                  position="absolute"
-                  width="36px"
-                  height="50px"
-                  borderRadius="50%"
-                  backgroundColor="white"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
+                <Box sx={style.fbIcon} 
                 >
                   <img src={iconZapa} alt="Facebook Icon" />
                 </Box>
 
-                <Text ml="2em" fontSize='30px' style={letraRara} >El-Shoes</Text>  
+                <Text ml="2em" fontSize='30px' sx={style.letraRara} >El-Shoes</Text>  
 
               </Flex>
               
@@ -125,42 +86,39 @@ function App() {
             </Flex> {/*termina el navbar */}
 
             <ChakraProvider >
-              
-              <Stack spacing={4}  sx={{  my:'15vh',  ml:"15vw", mr:"35vw", minWidth: '300px', minHeight: '400px' }}>
-                  <Text  fontSize='35px' fontWeight="bold" textAlign="left" mb='1em'>Sign Up</Text>
+            {mostrarDefecto && (
+              <box>
+                <Stack sx={style.stack}>
+                  <Text sx={style.stackText} >Sign Up</Text>
 
                   {/* {errorMessageExample()} */}
 
                   <FormControl>
-                    <Input type="email" placeholder="Email or Phone" fontSize='12px' fontWeight="bold" bg='#eeeeee'/>
+                    <Input type="email" placeholder="Email or Phone" sx={style.textPlaceholder}/>
                   </FormControl>
 
                   <FormControl>
-                    <Input type="text" placeholder="Full Name" fontSize='12px' fontWeight="bold" bg='#eeeeee'/>
+                    <Input type="text" placeholder="Full Name" sx={style.textPlaceholder}/>
                   </FormControl>
 
                   <FormControl>
-                    <Input type="password" placeholder="Password" fontSize='12px' fontWeight="bold" bg='#eeeeee'/>
+                    <Input type="password" placeholder="Password" sx={style.textPlaceholder}/>
                   </FormControl>
-
-
 
                   <Button  bg="#171717" color='white' my="3">
                     Sign Up
                   </Button>
 
-                  <Flex alignItems="center" color='gray' justifyContent="center" my="1" fontSize='10px' ml='20px' mr='20px'>
-                    <span style={{ borderBottom: '1px solid gray', width: '100px', display: 'inline-block' }}>   </span>
+                  <Flex sx={style.flexLine}>
+                    <span style={style.line}>   </span>
                       <Text p='5px'>if feeling lazy</Text> 
-                    <span style={{ borderBottom: '1px solid gray', width: '100px', display: 'inline-block' }}>  </span>
+                    <span style={style.line}>  </span>
                     
                   </Flex>
                   
-                  
-                  
                   <Flex justifyContent="space-between" my="1" >
                     
-                      <Button flex="1" textAlign="rigth" colorScheme='facebook' pr='10'>
+                      <Button colorScheme='facebook' sx={style.faceBtn} >
                         <img src={iconFace} alt="Facebook Icon" style={{ width: '25px', height: '25px'}} />
                         Facebook 
                       </Button>
@@ -172,11 +130,52 @@ function App() {
                     
                   </Flex>
 
-                  <Flex alignItems="center" justifyContent="center" my="1" fontSize='10px'>
-                    <Text color="grey">Already a account? <Text as="span" color="black" fontWeight="bold" >Sign In</Text></Text>
+                  <Flex sx={style.textRedirect} >
+                    <Text color="grey">Already a account? <Text as="span" color="black" fontWeight="bold" onClick={toggleElementVisibility}
+                    style={{ cursor: 'pointer' }}>Sign In</Text></Text>
                   </Flex>
                   <Divider />
                 </Stack>
+              </box>
+              )}
+              {ocultarDefecto && (
+              <box>
+                <Stack sx={style.stack}>
+                  <Text sx={style.stackText} >Sign In</Text>
+
+                  {/* {errorMessageExample()} */}
+
+
+                  <FormControl position="relative">
+                    <Input sx={style.imput} type="email" placeholder="Usename / Email"/>
+                    <img
+                      src={iconUser}
+                      alt="User Icon"
+                      style={style.userIcon}
+                    />
+                  </FormControl>
+
+                  <FormControl position="relative">
+                    <Input sx={style.imput} type="password" placeholder="Password"/>
+                    <img
+                      src={iconLock}
+                      alt="Lock Icon"
+                      style={style.lockIcon}
+                    />
+                  </FormControl>
+
+                  <Button  bg="#171717" color='white' my="3">
+                    Sing In
+                  </Button>
+
+                  <Flex sx={style.textRedirectIn}>
+                    <Text color="grey">Don't have an account? <Text onClick={toggleElementVisibility}
+                     cursor= 'pointer' as="span" color="black" fontWeight="bold" >Sign Up</Text></Text>
+                  </Flex>
+                  <Divider />
+                </Stack>
+              </box>
+              )}
             </ChakraProvider>
 
           </Flex>
