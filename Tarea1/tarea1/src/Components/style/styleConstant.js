@@ -94,7 +94,7 @@ const style = {
         mr: '20px'
     },
 
-    lne: {
+    line: {
         borderBottom: '1px solid gray',
         width: '100px',
         display: 'inline-block'

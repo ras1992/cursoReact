@@ -26,6 +26,7 @@ const SignUp = ({ toggleElementVisibility }) => {
     //     </FormControl>
     //   )
     // }
+    
     return (
         <Box>
             <Stack sx={style.stack}>

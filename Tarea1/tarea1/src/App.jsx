@@ -29,11 +29,15 @@ function App() {
 
             <ChakraProvider >
               {mostrarDefecto && (
+
                 <SignUp toggleElementVisibility={toggleElementVisibility} />
+
               )}
 
               {ocultarDefecto && (
+
                 <SignIn toggleElementVisibility={toggleElementVisibility} />
+                
               )}
             </ChakraProvider>
 

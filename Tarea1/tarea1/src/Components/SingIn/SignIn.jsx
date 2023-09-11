@@ -14,7 +14,6 @@ const SignIn = ({ toggleElementVisibility }) => {
 
                 {/* {errorMessageExample()} */}
 
-
                 <FormControl position="relative">
                     <Input sx={style.imput} type="email" placeholder="Usename / Email" />
                     <img
