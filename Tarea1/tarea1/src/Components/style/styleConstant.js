@@ -128,7 +128,7 @@ const style = {
         top: '10px'
     },
 
-    lckIcon: {
+    lockIcon: {
         width: '15px',
         height: '15px',
         position: 'absolute',
