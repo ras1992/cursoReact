@@ -19,15 +19,13 @@ function App() {
   return (
     <div sx={{ ...style.standard, h: '100vh', }}>
       <Flex as="login" justify="space-between" wrap="wrap">
+
         <Welcome />
-
-
 
         <Box sx={{ ...style.boxEnd, h: '100vh' }}>
           <Flex flexDirection="column">
 
             <Navbar></Navbar>
-
 
             <ChakraProvider >
               {mostrarDefecto && (
@@ -40,8 +38,6 @@ function App() {
             </ChakraProvider>
 
           </Flex>
-
-
 
         </Box>
       </Flex>

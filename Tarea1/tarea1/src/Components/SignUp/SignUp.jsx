@@ -1,8 +1,6 @@
 import { Box, Flex, Text, Input, Button, Stack, FormControl, FormErrorMessage } from '@chakra-ui/react';
 import { FaGoogle } from 'react-icons/fa'; // Replace 'fa' with the correct FontAwesome library
-
 import React from 'react';
-
 import iconFace from '../Images/iconFace.png';
 import style from '../Style/styleConstant.js'
 
@@ -64,7 +62,6 @@ const SignUp = ({ toggleElementVisibility }) => {
                         <img src={iconFace} alt="Facebook Icon" style={{ width: '25px', height: '25px' }} />
                         Facebook
                     </Button>
-
 
                     <Button flex="1" colorScheme='twitter' leftIcon={<FaGoogle />} pr='10' marginLeft="10px">
                         Google

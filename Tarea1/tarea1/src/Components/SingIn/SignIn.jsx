@@ -2,13 +2,9 @@ import { Box, Flex, Text, Input, Button, Stack, FormControl } from '@chakra-ui/r
 
 
 import React from 'react';
-
 import iconUser from '../Images/user.png';
 import iconLock from '../Images/lock.png';
-
 import style from '../Style/styleConstant.js'
-
-
 
 const SignIn = ({ toggleElementVisibility }) => {
     return (
