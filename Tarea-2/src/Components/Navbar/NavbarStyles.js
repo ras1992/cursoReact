@@ -9,7 +9,7 @@ const style = {
         backgroundSize: "8px 8px",
         minHeight: "6vh",
         pt:'1.5vh',
-        maxW:'100em',
+        maxW:'90vw',
         mx: 'auto',
         borderTopLeftRadius: '50px',
         borderTopRightRadius: '50px',

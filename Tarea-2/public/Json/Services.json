@@ -1,0 +1,40 @@
+{
+    "services": [
+      {
+        "nombre": "Website Design",
+        "icon": "https://img.icons8.com/ios/50/FA5252/group-of-projects.png",
+        "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quisquam laborum beatae doloremque!",
+        "id": 1
+      },
+      {
+        "nombre": "App Development",
+        "icon": "https://img.icons8.com/windows/64/FA5252/box--v1.png",
+        "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quisquam laborum beatae doloremque!",
+        "id": 2
+      },
+      {
+        "nombre": "Business Stratagy",
+        "icon": "https://img.icons8.com/ios/50/FA5252/imac.png",
+        "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quisquam laborum beatae doloremque!",
+        "id": 3
+      },
+      {
+        "nombre": "Website Design",
+        "icon": "https://img.icons8.com/ios/50/FA5252/group-of-projects.png",
+        "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quisquam laborum beatae doloremque!",
+        "id": 4
+      },
+      {
+        "nombre": "App Development",
+        "icon": "https://img.icons8.com/windows/64/FA5252/box--v1.png",
+        "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quisquam laborum beatae doloremque!",
+        "id": 5
+      },
+      {
+        "nombre": "Business Stratagy",
+        "icon": "https://img.icons8.com/ios/50/FA5252/imac.png",
+        "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quisquam laborum beatae doloremque!",
+        "id": 6
+      }
+    ]
+  }

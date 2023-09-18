@@ -36,14 +36,17 @@ const Navbar = () => {
                         </Button>
                     </Stack>
 
-                    <Flex pt="1vh" ml="5vh" alignItems="center" display={{ base: 'none', lg: 'flex' }}
+                    <Flex pt="1vh" ml="10vh" alignItems="center" textAlign='' display={{ base: 'none', lg: 'flex' }}
                     >
-                        <img src='vite.svg'></img>
-                        <Link href="#" sx={{ color: 'white', fontWeight: 'bold', ml: '1vh', fontSize: '20' }} style={style.links}>
+                        <Link href="#" sx={{ color: 'white', fontWeight: 'bold', fontSize: '20' }} style={style.links}>
+                        <Flex>    
+                            <img src='vite.svg'></img>
                             FORSTR
+                        </Flex>
+                            
                         </Link>
                         <Spacer />
-                        <Flex>
+                        <Flex ml='-60'>
                             <Link href="#" sx={style.links} >
                                 HOME
                             </Link>
@@ -62,7 +65,7 @@ const Navbar = () => {
                         </Flex>
                         <Spacer />
                         <WrapItem>
-                            <Button colorScheme='red' sx={{ borderRadius: 30, mr: '5vh' }}>DOWNLOAD CV</Button>
+                            <Button colorScheme='red' sx={{ borderRadius: 30, mr: '10vh' }}>DOWNLOAD CV</Button>
                         </WrapItem>
                     </Flex>
                 </Box>
