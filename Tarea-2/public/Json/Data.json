@@ -1,0 +1,129 @@
+{
+    "services": [
+      {
+        "name": "Website Design",
+        "icon": "./Images/WebSiteDesingDibujado.png",
+        "detail": "Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Vitae massa morbi",
+        "id": 1
+      },
+      {
+        "name": "App Development",
+        "icon": "./Images/caja-50.png",
+        "detail": "Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Vitae massa morbi",
+        "id": 2
+      },
+      {
+        "name": "Business Stratagy",
+        "icon": "./Images/monitorBussinesDibujado.png",
+        "detail": "Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Vitae massa morbi",
+        "id": 3
+      },
+      {
+        "name": "Website Design",
+        "icon": "./Images/WebSiteDesingDibujado.png",
+        "detail": "Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Vitae massa morbi",
+        "id": 4
+      },
+      {
+        "name": "App Development",
+        "icon": "./Images/caja-50.png",
+        "detail": "Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Vitae massa morbi",
+        "id": 5
+      },
+      {
+        "name": "Business Stratagy",
+        "icon": "./Images/monitorBussinesDibujado.png",
+        "detail": "Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Vitae massa morbi",
+        "id": 6
+      }
+    ],
+
+    "works": [
+      {
+        "name": "ras",
+        "icon": "./Images/WebSiteDesingDibujado.png",
+        "detail": "Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Vitae massa morbi",
+        "id": 1
+      },
+      {
+        "name": "ras1",
+        "icon": "./Images/caja-50.png",
+        "detail": "Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Vitae massa morbi",
+        "id": 2
+      },
+      {
+        "name": "ras2",
+        "icon": "./Images/monitorBussinesDibujado.png",
+        "detail": "Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Vitae massa morbi",
+        "id": 3
+      },
+      {
+        "name": "ras4",
+        "icon": "./Images/WebSiteDesingDibujado.png",
+        "detail": "Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Vitae massa morbi",
+        "id": 4
+      },
+      {
+        "name": "ras5",
+        "icon": "./Images/caja-50.png",
+        "detail": "Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Vitae massa morbi",
+        "id": 5
+      },
+      {
+        "name": "ras6",
+        "icon": "./Images/monitorBussinesDibujado.png",
+        "detail": "Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Vitae massa morbi",
+        "id": 6
+      }
+    ],
+    "resume": [
+      {
+        "name": "ras",
+        "icon": "./Images/WebSiteDesingDibujado.png",
+        "study": "University Ras",
+        "date": "2010 - 2023",
+        "detail": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt explicabo sequi amet omnis error dicta cumque, quisquam itaque ipsum soluta quod? Iste, distinctio quaerat.",
+        "id": 1
+      },
+      {
+        "name": "ras1",
+        "icon": "./Images/caja-50.png",
+        "study": "University Ras",
+        "date": "2010 - 2023",
+        "detail": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt explicabo sequi amet omnis error dicta cumque, quisquam itaque ipsum soluta quod? Iste, distinctio quaerat.",
+        "id": 2
+      },
+      {
+        "name": "ras2",
+        "icon": "./Images/monitorBussinesDibujado.png",
+        "study": "University Ras",
+        "date": "2010 - 2023",
+        "detail": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt explicabo sequi amet omnis error dicta cumque, quisquam itaque ipsum soluta quod? Iste, distinctio quaerat.",
+        "id": 3
+      },
+      {
+        "name": "ras4",
+        "icon": "./Images/WebSiteDesingDibujado.png",
+        "study": "University Ras",
+        "date": "2010 - 2023",
+        "detail": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt explicabo sequi amet omnis error dicta cumque, quisquam itaque ipsum soluta quod? Iste, distinctio quaerat.",
+        "id": 4
+      },
+      {
+        "name": "ras5",
+        "icon": "./Images/caja-50.png",
+        "study": "University Ras",
+        "date": "2010 - 2023",
+        "detail": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt explicabo sequi amet omnis error dicta cumque, quisquam itaque ipsum soluta quod? Iste, distinctio quaerat.",
+        "id": 5
+      },
+      {
+        "name": "ras6",
+        "icon": "./Images/monitorBussinesDibujado.png",
+        "study": "University Ras",
+        "date": "2010 - 2023",
+        "detail": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt explicabo sequi amet omnis error dicta cumque, quisquam itaque ipsum soluta quod? Iste, distinctio quaerat.",
+        "id": 6
+      }
+    ]
+  }

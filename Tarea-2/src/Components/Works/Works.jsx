@@ -1,18 +1,18 @@
 import { React, useState, useEffect } from 'react'; // Importa React, useState y useEffect desde React
-import style from './ServicesStyle'; // Importa los estilos desde un archivo externo
+import style from './WorksStyle'; // Importa los estilos desde un archivo externo
 import { ChakraProvider, Box, Text, Flex, Center, Button, Image } from '@chakra-ui/react'; // Importa componentes de Chakra UI
 import { Line } from '../Line/Line'; // Importa el componente personalizado Line
 
-const Services = () => {
+const Works = () => {
 
-    const [cardService, setCardService] = useState([]); // Define un estado para almacenar la información de las tarjetas de servicio
-   
+    const [cardService, setCardService] = useState([]); // Define un estado para almacenar la información de las tarjetas de trabajo
+
     useEffect(() => {
         try {
             // Realiza una solicitud fetch para obtener datos desde 'Json/Data.json'
             fetch('Json/Data.json')
                 .then(response => response.json()) // Convierte la respuesta a formato JSON
-                .then(data => setCardService(data.services)) // Almacena los datos de servicio en el estado
+                .then(data => setCardService(data.works)) // Almacena los datos de trabajo en el estado
 
         } catch (error) {
             console.error('Error fetching data:', error) // Manejo de errores en caso de falla en la solicitud
@@ -20,23 +20,18 @@ const Services = () => {
 
     }, []);
 
-    console.log(cardService) // Muestra en la consola la información de las tarjetas de servicio
+    console.log(cardService) // Muestra en la consola la información de las tarjetas de trabajo
 
     return (
         <>
             <ChakraProvider> {/* Proveedor de Chakra UI para estilos */}
-                <Flex sx={style.body} pt={{ base: '5em', md: '7em' }} pl={{ base: '3vw', md: '5vw' }} flexDirection='column'>
-                    <Box mb='4vh'>
-                        <Text
-                            flexGrow={{ base: 1, md: 1 }}
-                            width={{ base: '100%', md: '45em' }}
-                            alignItems="center">
-                            <Text color='red' fontSize="md">MY SERVICES</Text> {/* Texto "MY SERVICES" en rojo */}
-                            <Text as="h1" fontWeight="bold" color='white' fontSize="60">What I Do</Text> {/* Título en blanco */}
-                        </Text>
-                    </Box>
+                <Flex sx={style.body} pt={{ base: '5em', md: '5em' }} pl={{ base: '3vw', md: '5vw' }} flexDirection='column' justifyContent="center" alignItems="">
+                    <Flex align="center" flexDirection="column" textAlign="center" mb="4vh">
+                        <Text color='red' fontSize="md">AWARD WINNING WORK</Text>
+                        <Text as="h1" fontWeight="bold" color='white' fontSize="60">Recent Works</Text>
+                    </Flex>
 
-                    <Flex flexDirection="column" alignItems="left" pb='5em'>
+                    <Flex flexDirection="column" alignItems="left">
                         <Flex flexWrap="wrap" justifyContent="left">
                             {cardService.map((card, index) => (
                                 <Box
@@ -45,6 +40,7 @@ const Services = () => {
                                     flex={{ base: "0 0 calc(50% - 16px)", md: "0 0 calc(31% - 16px)" }} // Calcula el ancho de cada tarjeta para 3 por fila con margen
                                     mr="2vw" // Margen derecho
                                     mt="2vh" // Margen superior
+                                    mb="2vh" // Margen inferior
                                     bg="red" // Fondo rojo
                                     minWidth="50px" // Ancho mínimo
                                     borderColor="#21282b" // Color del borde
@@ -52,28 +48,20 @@ const Services = () => {
                                     overflow="hidden" // Controla el desbordamiento del contenido
                                     filter="blur(0.5px)" // Aplica un filtro de desenfoque
                                     boxShadow="4px 4px 8px rgba(0, 0, 0, 0.2)" // Sombra de la tarjeta
-                                    mb="16px" // Margen inferior
                                     style={{
                                         background: 'linear-gradient(140deg, #21282b, #1b1b1c)', // Cambia los colores según tus preferencias con gradiente
                                     }}
                                 >
-                                    <Image src={card.icon} w='50px' h='40px'></Image> {/* Muestra la imagen del icono */}
-                                    <Text fontSize="4xl" color="white" mt='1vh' >
-                                        {card.name} {/* Muestra el nombre del servicio */}
-                                    </Text>
-                                    <Text color="#bac5d5" fontSize="xl">
-                                        {card.detail} {/* Muestra los detalles del servicio */}
-                                    </Text>
+                                    <Image src={card.icon} w='100%' h='100%'></Image> {/* Muestra la imagen de trabajo a pantalla completa */}
                                 </Box>
                             ))}
                         </Flex>
                     </Flex>
-
-                    <Line ></Line> {/* Renderiza el componente personalizado Line */}
+                    <Line ></Line> 
                 </Flex>
             </ChakraProvider>
         </>
     )
 }
 
-export { Services }
+export { Works }

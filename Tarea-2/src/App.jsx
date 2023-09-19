@@ -4,6 +4,8 @@ import { Home } from './Components/Home/Home'
 import style from './AppStyle'
 import { Line } from './Components/Line/Line';
 import { Services } from './Components/Services/Services';
+import { Works } from './Components/Works/Works';
+import { Resume } from './Components/Resume/Resume';
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
           
           <Home></Home>
           <Services></Services>
+          <Works></Works>
+          <Resume></Resume>
       </Box>
     </>
   )

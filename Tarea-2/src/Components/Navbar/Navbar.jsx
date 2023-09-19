@@ -14,7 +14,7 @@ const Navbar = () => {
             <ChakraProvider>
 
                 <Box sx={style.body}>
-                    <Stack direction="row" spacing="4" align="center" ml="2vh" display={{ base: 'flex', lg: 'none' }}>
+                    <Stack direction="row" spacing="4" align="center" ml="2vh" mt="2em" display={{ base: 'flex', lg: 'none' }}>
 
                         <Link href="#" style={style.linksMenu} sx={{ color: 'white', fontWeight: 'bold', ml: '1vh', fontSize: '20', display: 'flex', alignItems: 'center' }}>
                             <img src='vite.svg' alt='Logo' style={{ marginRight: '0.5rem' }} />
@@ -36,7 +36,7 @@ const Navbar = () => {
                         </Button>
                     </Stack>
 
-                    <Flex pt="1vh" ml="10vh" alignItems="center" textAlign='' display={{ base: 'none', lg: 'flex' }}
+                    <Flex pt="1vh" ml="5vw" alignItems="center" textAlign='' display={{ base: 'none', lg: 'flex' }}
                     >
                         <Link href="#" sx={{ color: 'white', fontWeight: 'bold', fontSize: '20' }} style={style.links}>
                         <Flex>    
@@ -46,7 +46,7 @@ const Navbar = () => {
                             
                         </Link>
                         <Spacer />
-                        <Flex ml='-30'>
+                        <Flex ml='-5vw'>
                             <Link href="#" sx={style.links} >
                                 HOME
                             </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
                         </Flex>
                         <Spacer />
                         <WrapItem>
-                            <Button backgroundColor="#d03049" sx={{ borderRadius: 30, mr: '10vh' }} color='white'>DOWNLOAD CV</Button>
+                            <Button backgroundColor="#d03049" sx={{ borderRadius: 30, mr: '5vw' }} color='white'>DOWNLOAD CV</Button>
                         </WrapItem>
                     </Flex>
                 </Box>
