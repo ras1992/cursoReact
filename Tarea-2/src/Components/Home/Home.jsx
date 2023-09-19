@@ -43,10 +43,11 @@ const Home = () => {
                             flexGrow={{ base: 1, md: 1 }}
                             width={{ base: '100%', md: '45em' }}
                             alignItems="center"
+                            pr={{ base: '2vw', md: '6vw' }} 
                         >
                             <Text color="white">
                                 <h4>
-                                    Hello, <Text color="red" as="span"> I´m </Text>
+                                    Hello, <Text color="#d03049" as="span"> I´m </Text>
                                 </h4>
                                 <Text as="h1" fontWeight="bold" fontSize="60">
                                     Kthan Foster
@@ -100,16 +101,16 @@ const Home = () => {
                             flexGrow={{ base: 1.5, md: 0 }}
                             alignItems="center"
                             justifySelf="center"
-                            pt={{ base: '15vh', md: '20vh' }}
-                            pl={{ base: '2vw', md: '10vw' }}  // Utilizando porcentajes para el padding horizontal
+                            pt={{ base: '20vh', md: '20vh' }}
+                            
                      >
                             <Box
                                 >
                                 <Box
-                                    bgColor="#1d1c21"
+                                    bgColor="#1b1b26"
                                     borderRadius="15px"
                                     position="relative"
-                                    maxW={{ base: '29em', md: '29em' }}  // Hacer que el ancho máximo sea el 100% en pantallas pequeñas
+                                    maxW={{ base: '39em', md: '39em' }}  // Hacer que el ancho máximo sea el 100% en pantallas pequeñas
                                     w="100%"  // Hacer que el ancho sea el 100% en pantallas pequeñas
                                     h={{ base: '34em', md: '34em' }}  // Ajustar la altura en pantallas grandes
                                     maxHeight={{ base: '34em', md: 'none' }}  // Limitar la altura en pantallas pequeñas
@@ -120,8 +121,8 @@ const Home = () => {
                                         position="relative"
                                         pl={{ base: '1vh', md: '1vw' }}
                                         pr={{ base: '1vh', md: '1vw' }}
-                                        w="460"  // Hacer que la imagen ocupe el 100% del ancho del contenedor
-                                        h="700"  // Ajustar la altura automáticamente para mantener la proporción
+                                        w="100%"
+                                        h="700" 
                                         top={{ base: '-10em', md: '-10em' }}
                                         left="0"
                                         zIndex={1}

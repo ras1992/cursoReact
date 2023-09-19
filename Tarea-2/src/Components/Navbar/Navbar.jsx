@@ -46,7 +46,7 @@ const Navbar = () => {
                             
                         </Link>
                         <Spacer />
-                        <Flex ml='-60'>
+                        <Flex ml='-30'>
                             <Link href="#" sx={style.links} >
                                 HOME
                             </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
                         </Flex>
                         <Spacer />
                         <WrapItem>
-                            <Button colorScheme='red' sx={{ borderRadius: 30, mr: '10vh' }}>DOWNLOAD CV</Button>
+                            <Button backgroundColor="#d03049" sx={{ borderRadius: 30, mr: '10vh' }} color='white'>DOWNLOAD CV</Button>
                         </WrapItem>
                     </Flex>
                 </Box>
@@ -76,8 +76,8 @@ const Navbar = () => {
                     <DrawerContent sx={style.menu}>
                         <DrawerCloseButton sx={{
 
-                            color: 'red', // Color blanco para el contenido del botón cerrar
-                            fontWeight: 'bold', // Texto en negrita
+                            color: '#d03049',
+                            fontWeight: 'bold',
 
                         }} />
                         <DrawerHeader color='White'>Menú</DrawerHeader>
