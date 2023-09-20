@@ -31,7 +31,7 @@ const Works = () => {
                         <Text as="h1" fontWeight="bold" color='white' fontSize="60">Recent Works</Text>
                     </Flex>
 
-                    <Flex flexDirection="column" alignItems="left">
+                    <Flex flexDirection="column" alignItems="left" pb='5em'>
                         <Flex flexWrap="wrap" justifyContent="left">
                             {cardService.map((card, index) => (
                                 <Box
@@ -57,7 +57,7 @@ const Works = () => {
                             ))}
                         </Flex>
                     </Flex>
-                    <Line ></Line> 
+                    
                 </Flex>
             </ChakraProvider>
         </>

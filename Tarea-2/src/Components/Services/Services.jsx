@@ -68,8 +68,6 @@ const Services = () => {
                             ))}
                         </Flex>
                     </Flex>
-
-                    <Line ></Line> {/* Renderiza el componente personalizado Line */}
                 </Flex>
             </ChakraProvider>
         </>

@@ -137,9 +137,7 @@ const Home = () => {
                             </Box>
                         </Box>
                     </Flex>
-                    <Flex pt={{ base: '2em', md: '4em' }} pl={{ base: '5vh', md: '10vh' }} pr={{ base: '5vh', md: '10vh' }}>
-                        <Line></Line> {/* Renderiza el componente personalizado Line */}
-                    </Flex>
+                    
                 </Box>
             </ChakraProvider>
         </>

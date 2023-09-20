@@ -6,6 +6,8 @@ import { Line } from './Components/Line/Line';
 import { Services } from './Components/Services/Services';
 import { Works } from './Components/Works/Works';
 import { Resume } from './Components/Resume/Resume';
+import { Clients } from './Components/Clients/Clients';
+import { Contact } from './Components/Contact/Contact';
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
           <Services></Services>
           <Works></Works>
           <Resume></Resume>
+          <Clients></Clients>
+          <Contact></Contact>
       </Box>
     </>
   )
