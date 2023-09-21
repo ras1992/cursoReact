@@ -37,7 +37,7 @@ const Works = () => {
                                 <Box
                                     key={index} // Clave única para cada tarjeta
                                     p="10" // Relleno interno
-                                    flex={{ base: "0 0 calc(50% - 16px)", md: "0 0 calc(31% - 16px)" }} // Calcula el ancho de cada tarjeta para 3 por fila con margen
+                                    flex={{ base: "0 0 calc(100% - 16px)", md: "0 0 calc(31% - 16px)" }} // Calcula el ancho de cada tarjeta para 3 por fila con margen
                                     mr="2vw" // Margen derecho
                                     mt="2vh" // Margen superior
                                     mb="2vh" // Margen inferior

@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react'; // Importa React, useState y useEffect desde React
 import style from './ContactStyle'; // Importa los estilos desde un archivo externo
-import { ChakraProvider, Box, Text, Flex, Center, Button, Image, FormControl, Input } from '@chakra-ui/react'; // Importa componentes de Chakra UI
+import { ChakraProvider, Box, Text, Flex, Center, Button, Image, FormControl, Input, Textarea } from '@chakra-ui/react'; // Importa componentes de Chakra UI
 import { Line } from '../Line/Line'; // Importa el componente personalizado Line
 
 const Contact = () => {
@@ -27,21 +27,22 @@ const Contact = () => {
             <ChakraProvider>
                 {/* Proveedor de Chakra UI para estilos */}
                 <Flex sx={style.body} pt={{ base: '5em', md: '5em' }} pl={{ base: '3vw', md: '5vw' }} pr={{ base: '3vw', md: '5vw' }} flexDirection='column' >
+                    
                     <Flex align="center" flexDirection="column" textAlign="center" mb="4vh">
-                        <Text color='red' fontSize="md">YEARS OF EXPERIENCE</Text>
-                        <Text as="h1" fontWeight="bold" color='white' fontSize="60">My Resume</Text>
+                        <Text color='red' fontSize="md">CONTACT</Text>
+                        <Text as="h1" fontWeight="bold" color='white' fontSize="60">Contact Whit Me</Text>
                     </Flex>
 
-                    <Flex justifyContent="space-between">
+                    <Flex justifyContent="space-between" flexDirection={{ base: 'column', md: 'row' }}>
                         {/* Columna Roja */}
 
-                        <Flex flexDirection="column" bg='red' flex="0.5" >
+                        <Flex flexDirection="column"  flex="0.5" >
 
                             {cardService.map((card, index) => (
                                 <Box
                                     key={index}
                                     p="1em"
-                                    mb='1.5em'
+                                    mb={index === cardService.length - 1 ? '0' : '1.5em'} // Aplica '0' para el último elemento, '1.5em' para los demás
                                     minW='20vw'
                                     bg="red"
                                     borderColor="#21282b"
@@ -53,10 +54,10 @@ const Contact = () => {
                                         background: 'linear-gradient(140deg, #21282b, #1b1b1c)',
                                         textAlign: 'center',
                                         display: 'flex',
-                                        flexDirection: 'column', // Centra verticalmente
-                                        justifyContent: 'center', // Centra horizontalmente
-                                        height: '8em', // Modifica la altura aquí
-                                        width: '20em',
+                                        flexDirection: 'column',
+                                        justifyContent: 'center',
+                                        height: '8em',
+                                        
                                     }}
                                 >
                                     <Image src={card.icon} w='2em' h='2em' mx="auto" my="auto"></Image>
@@ -73,8 +74,9 @@ const Contact = () => {
                             borderRadius="10px"
                             p={9}
                             pt={12}
-
-                            ml='1.5em'
+                            mt={{ base: '1.5em', md: '0' }}   
+                            mb={{ base: '1.5em', md: '0' }}                      
+                            ml={{ base: '0', md: '1.5em' }}
                             w='100%'
 
 
@@ -90,7 +92,6 @@ const Contact = () => {
 
                                 flexDirection={{ base: 'column', md: 'row' }}
                                 style={{
-                                    background: 'linear-gradient(140deg, #21282b, #1b1b1c)',
                                     display: 'flex',
                                     justifyContent: 'center', // Centra horizontalmente
                                 }}
@@ -145,7 +146,6 @@ const Contact = () => {
 
                                 flexDirection={{ base: 'column', md: 'row' }}
                                 style={{
-                                    background: 'linear-gradient(140deg, #21282b, #1b1b1c)',
                                     display: 'flex',
                                     justifyContent: 'center', // Centra horizontalmente
                                 }}
@@ -198,25 +198,20 @@ const Contact = () => {
                             </Box>
 
                             <Box
-                                bg='red'
                                 style={{
-                                    background: 'linear-gradient(140deg, #21282b, #1b1b1c)',
-
                                     display: 'flex',
                                     height: '100%', // Altura al 100%
                                     width: '100%'
                                 }}
                             >
                                 <FormControl sx={{ width: '100%' }}>
-                                    <Input
+                                    <Textarea
                                         bg='#171818'
-
                                         borderColor='#171818'
                                         color='white'
                                         type="message"
                                         placeholder="Message"
                                         textAlign='left' // Alinea el texto a la izquierda
-                                        alignItems=' !important' // Alinea el contenido arriba a la izquierda
                                         sx={{
                                             ...style.textPlaceholder,
                                             width: '100%', // Ancho al 100%
@@ -229,9 +224,18 @@ const Contact = () => {
                                                 borderColor: '#303134', // Puedes ajustar el color del borde en foco
                                                 boxShadow: 'none', // Elimina la sombra en foco
                                             },
+                                            resize: 'none',
                                         }}
                                     />
                                 </FormControl>
+                            </Box>
+                            <Box mt='4' textAlign='center' alignItems='center'>
+                                <Button bg='#171818' color='#567f95' sx={{
+                                    '&:hover': {
+                                        borderColor: '#303134',
+                                        bg: '#303134'
+                                    },
+                                }}>Send Message <Image ml='1' textAlign='center' alignItems='center' src='./Images/iconContact/enviado-32.png' h='5' /> </Button>
                             </Box>
                         </Flex>
 

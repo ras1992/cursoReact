@@ -4,8 +4,6 @@ import style from './HomeStyle'; // Importa los estilos desde un archivo externo
 
 import { ChakraProvider, Box, Text, Flex, Image, HStack } from '@chakra-ui/react'; // Importa componentes de Chakra UI
 
-import { Line } from '../Line/Line'; // Importa el componente personalizado Line
-
 import perfil from '../Images/perfil2.png'; // Importa la imagen de perfil
 import facebook from '../Images/Social/icons8-facebook-f.svg'; // Importa ícono de Facebook
 import twitter from '../Images/Social/icons8-twitter.svg'; // Importa ícono de Twitter

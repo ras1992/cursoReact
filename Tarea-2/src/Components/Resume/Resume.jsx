@@ -6,6 +6,7 @@ import { Line } from '../Line/Line'; // Importa el componente personalizado Line
 const Resume = () => {
 
     const [cardServiceEd, setCardServiceEd] = useState([]); // Define un estado para almacenar la información de las tarjetas de trabajo
+    const [cardHeights, setCardHeights] = useState([]);
 
     useEffect(() => {
         try {
@@ -39,6 +40,7 @@ const Resume = () => {
 
     console.log(cardServiceEx) // Muestra en la consola la información de las tarjetas de trabajo
 
+
     return (
         <>
             <ChakraProvider>
@@ -48,84 +50,148 @@ const Resume = () => {
                         <Text color='red' fontSize="md">YEARS OF EXPERIENCE</Text>
                         <Text as="h1" fontWeight="bold" color='white' fontSize="60">My Resume</Text>
                     </Flex>
+                    <Box >
+                        <Flex flexDirection={{ base: 'column', md: 'row' }} paddingX={4} pb='5em'>
+                            {/* Columna Roja */}
 
-                    <Flex justifyContent="space-between" paddingX={4}  pb='5em'>
-                        {/* Columna Roja */}
-                        
-                        <Flex flexDirection="column" flex="1" bg='red' p={4} pl={{ base: '3vw', md: '5vw' }}>
-                            <Flex align="left" flexDirection="column" textAlign="left" mb="4vh" ml='-1em'>
-                                <Text as='h2' color='WHITE' >Job Experience</Text>
-                                <Text  color='white' fontSize="15">2010 - 2022</Text>
+                            <Flex flexDirection="column" flex="1" p={4}>
+                                <Flex align="left" flexDirection="column" textAlign="left" mb="4vh" ml='.1em' >
+                                    <Text as='h2' color='WHITE' >Job Experience</Text>
+                                    <Text color='red' fontSize="15">2010 - 2022</Text>
+                                </Flex>
+                                {cardServiceEx.map((card, index) => (
+                                    <Flex key={index} alignItems='stretch'>
+                                        {index >= 0 &&
+                                            <Flex bg='black'  flexDirection="column" mr={4}>
+                                                <Box style={{
+                                                    width: '3px',
+                                                    height: '100%',
+                                                    background: '#171818',
+                                                }}>
+
+                                                    <Box
+                                                        style={{
+                                                            transform: 'translateX(-4px) translateY(3em)',
+                                                            width: '10px',
+                                                            height: '10px',
+                                                            borderRadius: '10px',
+                                                            background: '#171818',
+                                                        }}
+                                                    >
+                                                        <Box style={{
+                                                            transform: 'translateX(3px) translateY(3.5px)',
+                                                            flexDirection: "row",
+                                                            width: '100px',
+                                                            position: 'absolute',
+                                                            height: '3px',
+                                                            background: '#171818',
+                                                        }}></Box>
+                                                    </Box>
+                                                </Box>
+
+
+                                            </Flex>
+                                        }
+                                        <Box 
+                                            key={index}
+                                            p="10"
+                                            mb={index === cardServiceEx.length - 1 ? '0' : '2vh'}
+                                            bg="red"
+                                            flex="1"
+                                            borderColor="#21282b"
+                                            borderRadius="10px"
+                                            filter="blur(0.5px)"
+                                            boxShadow="4px 4px 8px rgba(0, 0, 0, 0.2)"
+                                            style={{
+                                                background: 'linear-gradient(140deg, #21282b, #1b1b1c)',
+                                            }}
+                                        >
+                                            <Text fontSize="4xl" color="white" mt='-1.5vh'>
+                                                {card.name}
+                                            </Text>
+                                            <Text color="#71777c" mt='-1.2em' fontSize="15px">
+                                                {card.study} ({card.date})
+                                            </Text>
+                                            <Text color="#bac5d5" mt='1em' fontSize="xl">
+                                                {card.detail}
+                                            </Text>
+                                        </Box>
+                                    </Flex>
+                                ))}
                             </Flex>
-                            {cardServiceEx.map((card, index) => (
-                                <Box
-                                    key={index} // Clave única para cada tarjeta
-                                    p="10" // Relleno interno
-                                    mb="2vh" // Margen inferior
-                                    bg="red" // Fondo rojo
-                                    minWidth="100%" // Ancho mínimo
-                                    borderColor="#21282b" // Color del borde
-                                    borderRadius="10px" // Borde redondeado
-                                    overflow="hidden" // Controla el desbordamiento del contenido
-                                    filter="blur(0.5px)" // Aplica un filtro de desenfoque
-                                    boxShadow="4px 4px 8px rgba(0, 0, 0, 0.2)" // Sombra de la tarjeta
-                                    style={{
-                                        background: 'linear-gradient(140deg, #21282b, #1b1b1c)', // Cambia los colores según tus preferencias con gradiente
-                                    }}
-                                >
-                                    <Text fontSize="4xl" color="white" mt='1vh'>
-                                        {card.name}
-                                    </Text>
-                                    <Text color="#71777c" mt='-1.2em' fontSize="15px">
-                                        {card.study} ({card.date})
-                                    </Text>
-                                    <Text color="#bac5d5" mt='1em' fontSize="xl">
-                                        {card.detail}
-                                    </Text>
-                                </Box>
-                            ))}
-                        </Flex>
 
 
-                        {/* Columna Verde */}
-                        <Flex flexDirection="column" flex="1" bg='green' p={4} pl={{ base: '3vw', md: '5vw' }}>
-                            <Flex align="left" flexDirection="column" textAlign="left" mb="4vh" ml='-1em'>
-                                <Text as='h2' color='WHITE' >Education Quality</Text>
-                                <Text color='white' fontSize="15">2010 - 2022</Text>
+                            {/* Columna Verde */}
+                            <Flex flexDirection="column" flex="1" p={4}>
+                                <Flex align="left" flexDirection="column" textAlign="left" mb="4vh" ml='.1em'>
+                                    <Text as='h2' color='WHITE' >Education Quality</Text>
+                                    <Text color='red' fontSize="15">2010 - 2022</Text>
+                                </Flex>
+                                {cardServiceEd.map((card, index) => (
+                                    <Flex key={index} alignItems='stretch'>
+                                        {index >= 0 &&
+                                            <Flex bg='black' alignItems="center" flexDirection="column" mr={4}>
+                                                <Box style={{
+                                                    width: '3px',
+                                                    height: '100%',
+                                                    background: '#171818',
+                                                }}>
+
+                                                    <Box
+                                                        style={{
+                                                            transform: 'translateX(-4px) translateY(3em)',
+                                                            width: '10px',
+                                                            height: '10px',
+                                                            borderRadius: '10px',
+                                                            background: '#171818',
+                                                        }}
+                                                    >
+                                                        <Box style={{
+                                                            transform: 'translateX(3px) translateY(3.5px)',
+                                                            flexDirection: "row",
+                                                            width: '100px',
+                                                            position: 'absolute',
+                                                            height: '3px',
+                                                            background: '#171818',
+                                                        }}></Box>
+                                                    </Box>
+                                                </Box>
+
+
+                                            </Flex>
+                                        }
+                                        <Box
+                                            key={index}
+                                            p="10"
+                                            mb={index === cardServiceEd.length - 1 ? '0' : '2vh'}
+                                            bg="red"
+                                            flex="1"
+                                            borderColor="#21282b"
+                                            borderRadius="10px"
+                                            filter="blur(0.5px)"
+                                            boxShadow="4px 4px 8px rgba(0, 0, 0, 0.2)"
+                                            style={{
+                                                background: 'linear-gradient(140deg, #21282b, #1b1b1c)',
+                                            }}
+                                        >
+                                            <Text fontSize="4xl" color="white" mt='-1.5vh'>
+                                                {card.name}
+                                            </Text>
+                                            <Text color="#71777c" mt='-1.2em' fontSize="15px">
+                                                {card.study} ({card.date})
+                                            </Text>
+                                            <Text color="#bac5d5" mt='1em' fontSize="xl">
+                                                {card.detail}
+                                            </Text>
+                                        </Box>
+                                    </Flex>
+                                ))}
                             </Flex>
-                            {cardServiceEd.map((card, index) => (
-                                <Box
-                                    key={index} // Clave única para cada tarjeta
-                                    p="10" // Relleno interno
-                                    mb="2vh" // Margen inferior
-                                    bg="red" // Fondo rojo
-                                    minWidth="100%" // Ancho mínimo
-                                    borderColor="#21282b" // Color del borde
-                                    borderRadius="10px" // Borde redondeado
-                                    overflow="hidden" // Controla el desbordamiento del contenido
-                                    filter="blur(0.5px)" // Aplica un filtro de desenfoque
-                                    boxShadow="4px 4px 8px rgba(0, 0, 0, 0.2)" // Sombra de la tarjeta
-                                    style={{
-                                        background: 'linear-gradient(140deg, #21282b, #1b1b1c)', // Cambia los colores según tus preferencias con gradiente
-                                    }}
-                                >
-                                    <Text fontSize="4xl" color="white" mt='1vh'>
-                                        {card.name}
-                                    </Text>
-                                    <Text color="#71777c" mt='-1.2em' fontSize="15px">
-                                        {card.study} ({card.date})
-                                    </Text>
-                                    <Text color="#bac5d5" mt='1em' fontSize="xl">
-                                        {card.detail}
-                                    </Text>
-                                </Box>
-                            ))}
-
                         </Flex>
-                    </Flex>
-                    
+                    </Box>
+
                 </Flex>
-                
+
             </ChakraProvider>
 
         </>
