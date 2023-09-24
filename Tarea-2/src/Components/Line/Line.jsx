@@ -1,14 +1,11 @@
 import React from 'react';
-import style from './LineStyle.js'
+import style from './LineStyle';
 
 const Line = () => {
-    return (
-        <>
-            
-            <span style={style.line}> </span>
 
-        </>
-    )
+    return (
+        <div style={style.line}></div> 
+    );
 }
 
-export { Line }
+export { Line };

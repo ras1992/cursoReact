@@ -2,15 +2,16 @@ import React from 'react'; // Importa React para crear componentes
 
 import style from './HomeStyle'; // Importa los estilos desde un archivo externo
 
-import { ChakraProvider, Box, Text, Flex, Image, HStack } from '@chakra-ui/react'; // Importa componentes de Chakra UI
+import { ChakraProvider, Box, Text, Flex, Image, HStack, Link } from '@chakra-ui/react'; // Importa componentes de Chakra UI
 
 import perfil from '../Images/perfil2.png'; // Importa la imagen de perfil
-import facebook from '../Images/Social/icons8-facebook-f.svg'; // Importa ícono de Facebook
-import twitter from '../Images/Social/icons8-twitter.svg'; // Importa ícono de Twitter
 import linkedin from '../Images/Social/icons8-linkedin.svg'; // Importa ícono de LinkedIn
-import youtube from '../Images/Social/icons8-youtube-play.svg'; // Importa ícono de YouTube
+import gmail from '../Images/Social/icons8-gmail.svg'; // Importa ícono de YouTube
+import github from '../Images/Social/icons8-github 2.svg';
 
-const Home = () => {
+import translations from '../Languages/Translations';
+
+const Home = ({ currentLanguage }) => {
     const yearsExp = 20; // Define la variable yearsExp con un valor de 20 años de experiencia
     const globalClient = 700; // Define la variable globalClient con un valor de 700 clientes globales
     const awardsWins = 30; // Define la variable awardsWins con un valor de 30 premios
@@ -29,6 +30,13 @@ const Home = () => {
             </Box>
         );
     }
+     // Crea la URL para abrir una nueva ventana de redacción de correo en Gmail
+     const emailLink = `https://mail.google.com/mail/u/0/#inbox?compose=CllgCJZdjtdrPjjfMlrrQXlflXwSqKpTrNBGGMVdHTNvkDhgLWQsPpvVPCbHZDsKmHnwccxJRzL`;
+    
+     const handleClick = () => {
+         // Abre la URL en una nueva ventana o pestaña del navegador
+         window.open(emailLink);
+     };
 
     return (
         <>
@@ -39,36 +47,41 @@ const Home = () => {
                         alignItems="center" // Alinea elementos al centro verticalmente
                         justifyContent="space-between" // Espacio entre elementos en la fila
                         pl={{ base: '3vw', md: '5vw' }} // Relleno izquierdo en dispositivos pequeños y medianos
-                        pr={{ base: '5vw', md: '10vh' }} // Relleno derecho en dispositivos pequeños y medianos
-                        pt={{ base: '5vh', md: '10vh' }} // Relleno superior en dispositivos pequeños y medianos
+                        pr={{ base: '5vw', md: '7.1vh' }} // Relleno derecho en dispositivos pequeños y medianos
+                        pt={{ base: '10vh', md: '10vh' }} // Relleno superior en dispositivos pequeños y medianos
                     >
                         <Flex
                             flexGrow={{ base: 1, md: 1 }} // Factor de crecimiento flexible en dispositivos pequeños y medianos
-                            width={{ base: '100%', md: '45em' }} // Ancho del elemento
+                            width={{ base: '100', md: '45em' }} // Ancho del elemento
                             alignItems="center" // Alinea elementos al centro verticalmente
-                            pr={{ base: '2vw', md: '6vw' }} // Relleno derecho en dispositivos pequeños y medianos
+                            pr={{ base: '1em', md: '2em' }} // Relleno derecho en dispositivos pequeños y medianos
                         >
                             <Text color="white"> {/* Texto con color blanco */}
+
                                 <h4>
-                                    Hello, <Text color="#d03049" as="span"> I´m </Text> {/* Texto en rojo */}
+                                    {translations[currentLanguage]['Hello']}, <Text color="#d03049" as="span"> {translations[currentLanguage]['I´m']} </Text> {/* Texto en rojo */}
                                 </h4>
                                 <Text as="h1" fontWeight="bold" fontSize="60"> {/* Título en negrita y tamaño de fuente grande */}
-                                    Kthan Foster
+                                    {translations[currentLanguage]['Kthan Foster']}
                                 </Text>
-                                <Text as="h3">Web Designer And Web Developer</Text> {/* Título de nivel 3 */}
+                                <Text as="h3">{translations[currentLanguage]['Web Designer And Web Developer']}</Text> {/* Título de nivel 3 */}
                                 <Text mt="2vh" color="#bac5d5"> {/* Margen superior y color de texto */}
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-                                    exercitationem dolorum minima quas quidem quibusdam iste quaerat
-                                    molestias temporibus, est itaque nostrum quod asperiores ullam
-                                    magni possimus. Nobis, esse animi?
+                                    {translations[currentLanguage]['text']}
                                 </Text>
-                                <Text mt="6vh">FIND ME ON</Text> {/* Texto "FIND ME ON" con margen superior */}
+                                <Text mt="6vh">{translations[currentLanguage]['FIND ME ON']}</Text> {/* Texto "FIND ME ON" con margen superior */}
 
-                                <HStack spacing={2}> {/* Espacio horizontal entre elementos en la fila */}
-                                    <Icono src={facebook} /> {/* Muestra el ícono de Facebook utilizando el componente Icono */}
-                                    <Icono src={twitter} /> {/* Muestra el ícono de Twitter utilizando el componente Icono */}
-                                    <Icono src={linkedin} /> {/* Muestra el ícono de LinkedIn utilizando el componente Icono */}
-                                    <Icono src={youtube} /> {/* Muestra el ícono de YouTube utilizando el componente Icono */}
+                                <HStack spacing={2}>
+
+                                    <Link onClick={handleClick}>
+                                        <Icono src={gmail} />
+                                    </Link>
+                                    <Link href="https://www.linkedin.com/in/ramiro-kuspita-969014151" target="_blank">
+                                        <Icono src={linkedin} />
+                                    </Link>
+                                    <Link href="https://github.com/ras1992" target="_blank">
+                                        <Icono src={github} />
+                                    </Link>
+
                                 </HStack>
 
                                 <HStack spacing={{ base: "1em", md: "3em" }} pt={{ base: "1em", md: "3em" }}> {/* Espacio horizontal y margen superior */}
@@ -77,7 +90,7 @@ const Home = () => {
                                             {yearsExp}+ {/* Muestra la variable yearsExp */}
                                         </Text>
                                         <Text mt="1px" color="#bac5d5" fontSize="md">
-                                            YEARS OF EXPERIENCE {/* Texto de experiencia */}
+                                            {translations[currentLanguage]['YEARS OF EXPERIENCE']} {/* Texto de experiencia */}
                                         </Text>
                                     </Box>
                                     <Box>
@@ -85,7 +98,7 @@ const Home = () => {
                                             {globalClient}+ {/* Muestra la variable globalClient */}
                                         </Text>
                                         <Text mt="1px" color="#bac5d5" fontSize="md">
-                                            GLOBAL WORKING CLIENT {/* Texto de clientes globales */}
+                                            {translations[currentLanguage]['GLOBAL WORKING CLIENT']} {/* Texto de clientes globales */}
                                         </Text>
                                     </Box>
                                     <Box>
@@ -93,7 +106,7 @@ const Home = () => {
                                             {awardsWins}+ {/* Muestra la variable awardsWins */}
                                         </Text>
                                         <Text mt="1px" color="#bac5d5" fontSize="md">
-                                            AWARDS WIN {/* Texto de premios ganados */}
+                                            {translations[currentLanguage]['AWARDS WIN']} {/* Texto de premios ganados */}
                                         </Text>
                                     </Box>
                                 </HStack>
@@ -105,7 +118,7 @@ const Home = () => {
                             alignItems="center" // Alinea elementos al centro verticalmente
                             justifySelf="center" // Justificación propia al centro
                             pt={{ base: '20vh', md: '20vh' }} // Relleno superior en dispositivos pequeños y medianos
-                     >
+                        >
                             <Box>
                                 <Box
                                     bgColor="#1b1b26" // Fondo negro
@@ -135,7 +148,7 @@ const Home = () => {
                             </Box>
                         </Box>
                     </Flex>
-                    
+
                 </Box>
             </ChakraProvider>
         </>

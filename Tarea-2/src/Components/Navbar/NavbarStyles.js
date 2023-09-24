@@ -9,8 +9,8 @@ const style = {
         backgroundSize: "8px 8px",
         minHeight: "6vh",
         pt:'1.5vh',
-        maxW:'90vw',
-        mx: 'auto',
+        maxW:'1400px',
+        margin: '0 auto',
         borderTopLeftRadius: '50px',
         borderTopRightRadius: '50px',
     },
@@ -45,6 +45,18 @@ const style = {
                 height: '2px', // Establece el tamaño de la línea de puntos
                 color:'white'
             },
+        },
+    },
+
+    links2: {
+        bg:'none',
+        color: '#bac5d5',
+        ml: '4vh',
+        textDecoration: 'none', // Quítale el subrayado
+        transition: 'border-bottom 0.5s', // Agrega una transición para suavizar el cambio al pasar el mouse
+        position: 'relative',
+        _hover: {
+            color: 'white', // Cambia el color al pasar el mouse
         },
     },
 
