@@ -4,39 +4,15 @@ import style from './HomeStyle'; // Importa los estilos desde un archivo externo
 
 import { ChakraProvider, Box, Text, Flex, Image, HStack, Link } from '@chakra-ui/react'; // Importa componentes de Chakra UI
 
-import perfil from '../Images/perfil2.png'; // Importa la imagen de perfil
-import linkedin from '../Images/Social/icons8-linkedin.svg'; // Importa ícono de LinkedIn
-import gmail from '../Images/Social/icons8-gmail.svg'; // Importa ícono de YouTube
-import github from '../Images/Social/icons8-github 2.svg';
+import perfil from '../Images/perfil2.png';
 
 import translations from '../Languages/Translations';
+import { Redes } from '../Redes/Redes';
 
 const Home = ({ currentLanguage }) => {
     const yearsExp = 20; // Define la variable yearsExp con un valor de 20 años de experiencia
     const globalClient = 700; // Define la variable globalClient con un valor de 700 clientes globales
     const awardsWins = 30; // Define la variable awardsWins con un valor de 30 premios
-
-    // Componente Icono para mostrar íconos en un cuadro con fondo negro
-    const Icono = ({ src }) => {
-        return (
-            <Box
-                bg="#1d1e24" // Fondo negro
-                borderRadius="md" // Borde redondeado
-                p={3} // Relleno interno
-                mx={1} // Margen horizontal
-                display="inline-block" // Mostrar en línea
-            >
-                <img src={src} alt="Icono" width={20} height={10} /> {/* Muestra la imagen */}
-            </Box>
-        );
-    }
-     // Crea la URL para abrir una nueva ventana de redacción de correo en Gmail
-     const emailLink = `https://mail.google.com/mail/u/0/#inbox?compose=CllgCJZdjtdrPjjfMlrrQXlflXwSqKpTrNBGGMVdHTNvkDhgLWQsPpvVPCbHZDsKmHnwccxJRzL`;
-    
-     const handleClick = () => {
-         // Abre la URL en una nueva ventana o pestaña del navegador
-         window.open(emailLink);
-     };
 
     return (
         <>
@@ -70,19 +46,7 @@ const Home = ({ currentLanguage }) => {
                                 </Text>
                                 <Text mt="6vh">{translations[currentLanguage]['FIND ME ON']}</Text> {/* Texto "FIND ME ON" con margen superior */}
 
-                                <HStack spacing={2}>
-
-                                    <Link onClick={handleClick}>
-                                        <Icono src={gmail} />
-                                    </Link>
-                                    <Link href="https://www.linkedin.com/in/ramiro-kuspita-969014151" target="_blank">
-                                        <Icono src={linkedin} />
-                                    </Link>
-                                    <Link href="https://github.com/ras1992" target="_blank">
-                                        <Icono src={github} />
-                                    </Link>
-
-                                </HStack>
+                                <Redes></Redes>
 
                                 <HStack spacing={{ base: "1em", md: "3em" }} pt={{ base: "1em", md: "3em" }}> {/* Espacio horizontal y margen superior */}
                                     <Box>

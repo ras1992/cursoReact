@@ -2,7 +2,7 @@ const translations = {
   es: {
     NavBar: 'Navegación',
     Menu: 'MENÚ',
-    FORSTR: 'FORSTR',
+    FORSTR: 'KRAS',
     HOME: 'INICIO',
     SERVICES: 'SERVICIOS',
     PORFOLIO: 'PORTAFOLIO',
@@ -49,7 +49,7 @@ const translations = {
   en: {
     NavBar: 'Navigation',
     Menu: 'MENU',
-    FORSTR: 'FORSTR',
+    FORSTR: 'KRAS',
     HOME: 'HOME',
     SERVICES: 'SERVICES',
     PORFOLIO: 'PORTFOLIO',

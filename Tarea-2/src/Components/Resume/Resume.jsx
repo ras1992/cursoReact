@@ -56,7 +56,7 @@ const Resume = ({currentLanguage}) => {
                                 <Flex flexDirection="column" flex="1" p={4}>
                                     <Flex align="left" flexDirection="column" textAlign="left" mb="4vh" ml='.1em' >
                                         <Text as='h2' color='WHITE' >{translations[currentLanguage]['Job Experience']}</Text>
-                                        <Text color='red' fontSize="15">2010 - 2022</Text>
+                                        <Text color='red' fontSize="15">2017 - 2023</Text>
                                     </Flex>
                                     {cardServiceEx.map((card, index) => (
                                         <Flex key={index} alignItems='stretch'>
@@ -105,14 +105,17 @@ const Resume = ({currentLanguage}) => {
                                                     background: 'linear-gradient(140deg, #21282b, #1b1b1c)',
                                                 }}
                                             >
-                                                <Text fontSize="4xl" color="white" mt='-1.5vh'>
+                                                <Text fontSize="4xl" color={(card.name) === 'Desempleado' || (card.name) === 'Unemployed' ? 'red.400' : 'white'} mt='-1.5vh' >
                                                     {card.name}
                                                 </Text>
-                                                <Text color="#71777c" mt='-1.2em' fontSize="15px">
-                                                    {card.study} ({card.date})
+                                                <Text color="#71777c" fontSize="18px">
+                                                    {card.company} ({card.date})
                                                 </Text>
-                                                <Text color="#bac5d5" mt='1em' fontSize="xl">
-                                                    {card.detail}
+                                                <Text color="#71777c" fontSize="15px">
+                                                    {card.details}
+                                                </Text>
+                                                <Text  mt='-1em' fontSize="xl" color={(card.status) === 'Freelancer' ? 'green.300' : 'orange.300'}>
+                                                    {card.status}
                                                 </Text>
                                             </Box>
                                         </Flex>
@@ -124,7 +127,7 @@ const Resume = ({currentLanguage}) => {
                                 <Flex flexDirection="column" flex="1" p={4}>
                                     <Flex align="left" flexDirection="column" textAlign="left" mb="4vh" ml='.1em'>
                                         <Text as='h2' color='WHITE' >{translations[currentLanguage]['Education Quality']}</Text>
-                                        <Text color='red' fontSize="15">2010 - 2022</Text>
+                                        <Text color='red' fontSize="15">2004 - 2023</Text>
                                     </Flex>
                                     {cardServiceEd.map((card, index) => (
                                         <Flex key={index} alignItems='stretch'>
@@ -179,8 +182,11 @@ const Resume = ({currentLanguage}) => {
                                                 <Text color="#71777c" mt='-1.2em' fontSize="15px">
                                                     {card.study} ({card.date})
                                                 </Text>
-                                                <Text color="#bac5d5" mt='1em' fontSize="xl">
-                                                    {card.detail}
+                                                <Text color="#71777c" fontSize="15px">
+                                                    {card.modality}
+                                                </Text>
+                                                <Text  mt='-1em' fontSize="xl" color={(card.status) === 'Graduado' || (card.status) === 'Graduated' ? 'green.300' : (card.status) === 'Abandonado' || (card.status) === 'Dropped Out' ? 'red.400' : 'orange.300'}>
+                                                    {card.status}
                                                 </Text>
                                             </Box>
                                         </Flex>

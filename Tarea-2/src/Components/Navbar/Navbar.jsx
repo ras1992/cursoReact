@@ -17,9 +17,9 @@ const Navbar = ({ currentLanguage, onChangeLanguage }) => {
             <ChakraProvider>
                 <Box sx={style.body} 
                 position="fixed"top="0" left="0" right="0" zIndex="3">
-                    <Stack direction="row" spacing="4" align="center" ml="1vw" mt="2em" display={{ base: 'flex', lg: 'none' }}>
+                    <Stack direction="row" spacing="4" align="center" ml="1vw" mt="0.5em" display={{ base: 'flex', lg: 'none' }}>
                         <Link href="#" style={style.linksMenu} sx={{ color: 'white', fontWeight: 'bold', ml: '1vh', fontSize: '20', display: 'flex', alignItems: 'center' }}>
-                            <img src='vite.svg' alt='Logo' style={{ marginRight: '0.5rem' }} />
+                        <img src='vite.png' alt='Logo' width='20px' height='20px' style={{ marginRight: '0.5rem' }} />
                             {translations[currentLanguage]['FORSTR']}
                         </Link>
                         <Spacer />
@@ -38,10 +38,10 @@ const Navbar = ({ currentLanguage, onChangeLanguage }) => {
                         </Button>
                     </Stack>
 
-                    <Flex pt="1vh" ml="5vw" alignItems="center" textAlign='' display={{ base: 'none', lg: 'flex' }}>
+                    <Flex pt="1" ml="5vw" alignItems="center" textAlign='' display={{ base: 'none', lg: 'flex' }}>
                         <Link href="#" sx={{ color: 'white', fontWeight: 'bold', fontSize: '20' }} style={style.links}>
                             <Flex>
-                                <img src='vite.svg' alt='Logo'></img>
+                                <img src='vite.png' alt='Logo' width='20px' height='20px' style={{ marginRight: '0.5rem' }}></img>
                                 {translations[currentLanguage]['FORSTR']}
                             </Flex>
                         </Link>

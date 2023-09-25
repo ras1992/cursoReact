@@ -10,6 +10,7 @@ const style = {
         margin: '0 auto',
         mx: 'auto', // Agrega esta línea para centrar horizontalmente
         pb:'3em',
+        pt:'3em'
     },
     
 
