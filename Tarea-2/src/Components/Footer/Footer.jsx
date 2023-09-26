@@ -22,10 +22,11 @@ const Footer = ({ currentLanguage }) => {
                     <Redes />
 
                 </Box> 
-                <Text mt='10' color='white'> Fotstr @ <span>{año}</span> {translations[currentLanguage]['All Rights Reserved By PixelMove']}</Text>
+                <Text mt='10' color='white'> <span>{translations[currentLanguage]['FORSTR'].charAt(0).toUpperCase() + translations[currentLanguage]['FORSTR'].slice(1).toLowerCase()}</span> @ <span>{año}</span> {translations[currentLanguage]['All Rights Reserved By PixelMove']}</Text>
             </Box>
         </ChakraProvider>
     );
 }
 
 export { Footer }
+

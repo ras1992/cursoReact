@@ -1,0 +1,21 @@
+node.js
+
+npm init (personalizado los datos)
+npm init -y (auto)
+
+ejecutar codigo
+node proyect.js
+
+// servidor
+
+metodos http -- GET - POST - DELETE - UPDATE
+
+https://www.simform.com/blog/best-nodejs-frameworks/
+
+
+__dirname //path donde esta el archivo
+__filename //archivo que se esta ejecutando
+
+
+
+https://heropatterns.com/
