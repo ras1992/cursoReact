@@ -10,10 +10,10 @@ router.get('/cafes-lista',controller.listadoCafes)
 router.get('/login',controller.login)
 
 //envio datos usuario a server
-router.get('/register',controller.registerRes)
+router.get('/register',controller.register_get)
 
 //resepcion respuesta de usuario
-router.post('/register',controller.registerReq)
+router.post('/register',controller.register_post)
 
 
 ///>>> controllers

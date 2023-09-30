@@ -5,6 +5,8 @@
 const express=require('express')
 const app=express()
 const misrutas=require('./router/router')
+const mongoose = require('mongoose')
+require('dotenv').config()
 
 //middleware
 app.use(express.static('public'))
@@ -12,6 +14,22 @@ app.use(express.json())
 
 //view engine
 app.set('view engine', 'ejs')
+
+const dbURL=process.env.DB_URL
+console.log(dbURL)
+// Conexión a la base de datos
+mongoose.connect(dbURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then((result)=>app.listen(3600))
+.catch((error)=>console.log(error))
+
+
+// Manejo de errores de conexión
+mongoose.connection.on('error', (error) => {
+  console.error('Error de conexión a MongoDB:', error);
+});
+
 
 
 //peticiones
@@ -51,4 +69,4 @@ app.use(misrutas)
 //     res.send('hola')
 // })
 
-app.listen(3600)
+app.listen(3636)
