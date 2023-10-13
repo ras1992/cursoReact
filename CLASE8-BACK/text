@@ -3,7 +3,7 @@ https://www.mongodb.com/docs/manual/reference/operator/query/
 
 https://www.mongodb.com/docs/manual/reference/operator/query/regex/
 
-https://mongoosejs.com/docs/index.htmlcd
+https://mongoosejs.com/docs/index.html
 
 
 codigos de respuestas de html
@@ -14,3 +14,8 @@ https://www.npmjs.com/package/dotenv
 https://www.npmjs.com/package/bcrypt
 
 https://kuspita20.odoo.com/website/configurator/5
+
+nodemon
+
+// datos de compatibilidad en otros exploradores web
+https://caniuse.com/?search=required

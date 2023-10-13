@@ -15,7 +15,6 @@ router.get('/register',controller.register_get)
 //resepcion respuesta de usuario
 router.post('/register',controller.register_post)
 
-
 ///>>> controllers
 // router.get('/cafes-lista',(req,res)=>{
 //     res.render('cafes')

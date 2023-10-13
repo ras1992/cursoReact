@@ -11,6 +11,7 @@ require('dotenv').config()
 //middleware
 app.use(express.static('public'))
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 
 //view engine
 app.set('view engine', 'ejs')
@@ -21,9 +22,13 @@ console.log(dbURL)
 mongoose.connect(dbURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then((result)=>app.listen(3600))
+}).then((result)=>app.listen(process.env.PORT))
 .catch((error)=>console.log(error))
 
+// Manejo de conexión exitosa
+mongoose.connection.on('connected', () => {
+  console.log('Base de datos conectada exitosamente');
+});
 
 // Manejo de errores de conexión
 mongoose.connection.on('error', (error) => {
