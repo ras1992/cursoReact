@@ -1,44 +1,40 @@
-import { React, useState, useEffect } from 'react'; // Importa React, useState y useEffect desde React
-import style from './ResumeStyle'; // Importa los estilos desde un archivo externo
-import { ChakraProvider, Box, Text, Flex, Center, Button, Image } from '@chakra-ui/react'; // Importa componentes de Chakra UI
-
+import { React, useState, useEffect } from 'react';
+import style from './ResumeStyle';
+import { ChakraProvider, Box, Text, Flex, Center, Button, Image } from '@chakra-ui/react';
 import translations from '../Languages/Translations';
 
 const Resume = ({ currentLanguage }) => {
 
-    const [cardServiceEd, setCardServiceEd] = useState([]); // Define un estado para almacenar la información de las tarjetas de trabajo
+    const [cardServiceEd, setCardServiceEd] = useState([]);
 
     useEffect(() => {
         try {
-            // Realiza una solicitud fetch para obtener datos desde 'Json/Data.json'
             fetch('Json/Data.json')
-                .then(response => response.json()) // Convierte la respuesta a formato JSON
-                .then(data => setCardServiceEd(data[currentLanguage]['resumeEducation'])) // Almacena los datos de trabajo en el estado
-
+                .then(response => response.json())
+                .then(data => setCardServiceEd(data[currentLanguage]['resumeEducation']))
         } catch (error) {
-            console.error('Error fetching data:', error) // Manejo de errores en caso de falla en la solicitud
+            console.error('Error fetching data:', error)
         }
 
     }, [currentLanguage]);
 
-    console.log(cardServiceEd) // Muestra en la consola la información de las tarjetas de trabajo
+    console.log(cardServiceEd)
 
-    const [cardServiceEx, setCardServiceEx] = useState([]); // Define un estado para almacenar la información de las tarjetas de trabajo
+    const [cardServiceEx, setCardServiceEx] = useState([]);
 
     useEffect(() => {
         try {
-            // Realiza una solicitud fetch para obtener datos desde 'Json/Data.json'
             fetch('Json/Data.json')
-                .then(response => response.json()) // Convierte la respuesta a formato JSON
-                .then(data => setCardServiceEx(data[currentLanguage]['resumeExperience'])) // Almacena los datos de trabajo en el estado
+                .then(response => response.json())
+                .then(data => setCardServiceEx(data[currentLanguage]['resumeExperience']))
 
         } catch (error) {
-            console.error('Error fetching data:', error) // Manejo de errores en caso de falla en la solicitud
+            console.error('Error fetching data:', error)
         }
 
     }, [currentLanguage]);
 
-    console.log(cardServiceEx) // Muestra en la consola la información de las tarjetas de trabajo
+    console.log(cardServiceEx)
 
     return (
         <>
