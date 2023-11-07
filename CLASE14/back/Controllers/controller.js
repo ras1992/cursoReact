@@ -7,16 +7,13 @@ const obtenerDatos= async(req,res)=>{
 }
 
 const crearDato=async(req, res) => {
-    // res.json({ mensaje: 'holaa post' })
-    // console.log(req.body)
     const {materia, calificacion, aula}=req.body
     try {
-        const resultado=await colegio.create(calificacion,materia,aula)
-        res.status(200).json(resultado)
+        const datos=await colegio.create({calificacion, materia, aula})
+        res.status(200).json(datos)
 
     } catch (error) {
         res.status(404).json({error:error.message})
-        console.log('Error: ',error)
     }
 }
 

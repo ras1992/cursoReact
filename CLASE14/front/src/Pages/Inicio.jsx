@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './Inicio'
+import { Detalles } from '../Components/Detalles/Detalles';
+import { Formulario } from '../Components/Formulario.jsx/Formulario';
+
 
 const Inicio = () => {
-    const [datos, setDatos]=useState([])
+    const [datos, setDatos]=useState(null)
 
     useEffect(()=>{
         const traerInfo= async()=>{
@@ -23,14 +26,17 @@ const Inicio = () => {
 
     console.log(datos)
     return(
-        <div>
-            {datos.map(dato =>(
-                <p>dato</p>
-
-            )
+        <>
+            <Formulario></Formulario>
+            {datos && datos.map(dato =>(
+                <div key={dato._id}>
+                        <p>{dato.materia}</p>
+                        <Detalles dato={dato} key={dato.id}></Detalles>
+                </div>
                 
-                )}
-        </div>
+            ))}
+
+        </>
     )
 }
 

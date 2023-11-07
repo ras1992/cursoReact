@@ -15,7 +15,7 @@ app.use('/miapi/pepe', rutas)
 mongoose.connect('mongodb://127.0.0.1:27017')
 .then(()=>{
         console.log('conectado')
-        app.listen(4100, ()=>{
+        app.listen(3200, ()=>{
             console.log('El servidor esta online')
         })
     }).catch(()=>{
